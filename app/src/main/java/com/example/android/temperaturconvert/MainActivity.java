@@ -2,6 +2,7 @@ package com.example.android.temperaturconvert;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     DecimalFormat round = new DecimalFormat("0.0");
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showText.setText("barang hilang");
+                Log.d(TAG,"Hello from here");
+                Log.v(TAG,"another String");
             }
         });
 
