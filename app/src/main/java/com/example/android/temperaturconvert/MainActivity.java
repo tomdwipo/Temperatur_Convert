@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonC;
     private Button buttonF;
     private TextView showTemperature;
+    private ImageView klikGambar;
+    private TextView showText;
 
     DecimalFormat round = new DecimalFormat("0.0");
 
@@ -29,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button)findViewById(R.id.buttonC);
         buttonF = (Button)findViewById(R.id.buttonF);
         showTemperature = (TextView)findViewById(R.id.hasil);
+        klikGambar = (ImageView)findViewById(R.id.imageView);
+        showText = (TextView)findViewById(R.id.showtext);
+
+        klikGambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showText.setText("barang hilang");
+            }
+        });
 
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
