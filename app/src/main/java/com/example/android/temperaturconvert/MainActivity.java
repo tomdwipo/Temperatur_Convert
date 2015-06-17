@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView showTemperature;
     private ImageView klikGambar;
     private TextView showText;
+    private Button ganti;
+    private Button back;
 
     DecimalFormat round = new DecimalFormat("0.0");
 
@@ -80,6 +82,70 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        ganti = (Button)findViewById(R.id.ganti);
+        back = (Button)findViewById(R.id.back);
+
+
+    }
+    public void kedua(View view){
+        setContentView(R.layout.kedua);
+    }
+    public void pertama (View view){
+        setContentView(R.layout.activity_main);
+
+        tempEditText = (EditText)findViewById(R.id.editText);
+        buttonC = (Button)findViewById(R.id.buttonC);
+        buttonF = (Button)findViewById(R.id.buttonF);
+        showTemperature = (TextView)findViewById(R.id.hasil);
+        klikGambar = (ImageView)findViewById(R.id.imageView);
+        showText = (TextView)findViewById(R.id.showtext);
+
+        klikGambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showText.setText("barang hilang");
+                Log.d(TAG,"Hello from here");
+                Log.v(TAG,"another String");
+            }
+        });
+
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String tempEditTextVal = tempEditText.getText().toString();
+                if (tempEditTextVal.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"masukan value",Toast.LENGTH_LONG).show();
+                }else{
+                    double editTextInt = Double.parseDouble(tempEditTextVal);
+
+                    double resultcel = convertToCelcius(editTextInt);
+                    String stringResultCel = String.valueOf(round.format(resultcel));
+                    showTemperature.setText(stringResultCel +" C");
+                }
+
+            }
+        });
+
+        buttonF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String temEditTextVal = tempEditText.getText().toString();
+                if (temEditTextVal.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"masukan value",Toast.LENGTH_LONG).show();
+                }else{
+                    double editTextInt = Double.parseDouble(temEditTextVal);
+                    double resultfah = convertToFahrenheit(editTextInt);
+                    String StringResultFah = String.valueOf(round.format(resultfah));
+                    showTemperature.setText(StringResultFah +" F" );
+                }
+
+            }
+        });
+
+        ganti = (Button)findViewById(R.id.ganti);
+        back = (Button)findViewById(R.id.back);
 
     }
 

@@ -50,25 +50,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
+        android:text="0"
         android:id="@+id/hasil"
         android:textSize="30dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hasil"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ganti"
+        android:text="ganti"
+        android:onClick="kedua"/>
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/abtiga"
-        android:layout_below="@+id/hasil"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ganti"
+        android:layout_centerHorizontal="true"
+
         android:id="@+id/imageView" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="0"
         android:id="@+id/showtext"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
