@@ -1,5 +1,6 @@
 package com.example.android.temperaturconvert;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView showText;
     private Button ganti;
     private Button back;
+    private Button second;
 
     DecimalFormat round = new DecimalFormat("0.0");
 
@@ -146,6 +148,14 @@ public class MainActivity extends AppCompatActivity {
 
         ganti = (Button)findViewById(R.id.ganti);
         back = (Button)findViewById(R.id.back);
+
+        second = (Button)findViewById(R.id.second);
+        second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
 
     }
 
