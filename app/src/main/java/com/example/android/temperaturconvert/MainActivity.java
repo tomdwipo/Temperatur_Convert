@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Button back;
     private Button second;
 
+    static final int REQUEST_CODE  = 1;
+
     DecimalFormat round = new DecimalFormat("0.0");
 
     private static final String TAG = "MainActivity";
@@ -87,6 +89,20 @@ public class MainActivity extends AppCompatActivity {
 
         ganti = (Button)findViewById(R.id.ganti);
         back = (Button)findViewById(R.id.back);
+        second = (Button)findViewById(R.id.second);
+        second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("activityOone","I'm from the First Acivity");
+                startActivity(intent);
+
+                startActivityForResult(intent, REQUEST_CODE);
+
+                //startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
+
 
 
     }
@@ -102,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         showTemperature = (TextView)findViewById(R.id.hasil);
         klikGambar = (ImageView)findViewById(R.id.imageView);
         showText = (TextView)findViewById(R.id.showtext);
+
 
         klikGambar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,7 +170,13 @@ public class MainActivity extends AppCompatActivity {
         second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("activityOone","I'm from the First Acivity");
+                startActivity(intent);
+
+                startActivityForResult(intent, REQUEST_CODE);
+
+                //startActivity(new Intent(MainActivity.this, SecondActivity.class));
             }
         });
 
@@ -235,4 +258,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE){
+            if (resultCode == RESULT_OK){
+                String result = data.getStringExtra("returnData");
+                Toast.makeText(this,result,Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }

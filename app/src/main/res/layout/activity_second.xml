@@ -9,11 +9,20 @@
     tools:context="com.example.android.temperaturconvert.SecondActivity">
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Second Activity"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textSize="30dp"/>
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back!"
+        android:layout_below="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
 
 </RelativeLayout>
