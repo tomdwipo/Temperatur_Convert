@@ -181,4 +181,48 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplication(),"On pause method",Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplication(),"On resume method",Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplication(),"On start method",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplication(),"On restart method",Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplication(),"On stop method",Toast.LENGTH_LONG).show();
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplication(),"On destroy method",Toast.LENGTH_LONG).show();
+
+    }
+
 }
